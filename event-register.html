@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione Evento - Sport Time</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Sport Time</span>
+                </a>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html" class="active">Eventi</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-ghost">Accedi</a>
+                <a href="register.html" class="btn btn-primary">Registrati</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html" class="active">Eventi</a></li>
+            <li><a href="services.html">Servizi</a></li>
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="contact.html">Contatti</a></li>
+            <li class="mobile-auth">
+                <a href="login.html" class="btn btn-ghost">Accedi</a>
+                <a href="register.html" class="btn btn-primary">Registrati</a>
+            </li>
+        </ul>
+    </div>
+    
+    <main>
+        <div class="container">
+            <div class="back-link mb-4">
+                <a href="javascript:history.back()" class="text-primary">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Torna all'Evento
+                </a>
+            </div>
+            
+            <div class="event-header" id="eventHeader">
+                <div class="loading">Caricamento dettagli evento...</div>
+            </div>
+            
+            <div class="registration-container">
+                <h2>Modulo di Iscrizione</h2>
+                
+                <div class="registration-steps">
+                    <div class="step-item active">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Dati Personali</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Dati Team</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Dati Gara</div>
+                    </div>
+                </div>
+                
+                <form id="registrationForm" class="mt-4">
+                    <!-- Step 1: Dati Personali -->
+                    <div class="form-step active" id="step1">
+                        <h3>Dati Personali</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">Nome *</label>
+                                <input type="text" id="firstName" name="firstName" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Cognome *</label>
+                                <input type="text" id="lastName" name="lastName" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Sesso *</label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="genderMale" name="gender" value="M" required>
+                                    <label for="genderMale">Maschile</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="genderFemale" name="gender" value="F" required>
+                                    <label for="genderFemale">Femminile</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nationality" class="form-label">Nazionalità *</label>
+                            <select id="nationality" name="nationality" class="form-input" required>
+                                <option value="IT">Italia</option>
+                                <option value="FR">Francia</option>
+                                <option value="DE">Germania</option>
+                                <option value="ES">Spagna</option>
+                                <option value="GB">Regno Unito</option>
+                                <option value="US">Stati Uniti</option>
+                                <!-- Altre nazionalità -->
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fiscalCode" class="form-label">Codice Fiscale *</label>
+                            <input type="text" id="fiscalCode" name="fiscalCode" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Telefono *</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthDate" class="form-label">Data di Nascita *</label>
+                            <input type="date" id="birthDate" name="birthDate" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Dati Team -->
+                    <div class="form-step" id="step2">
+                        <h3>Dati Team</h3>
+                        
+                        <div class="form-check mb-4">
+                            <input type="checkbox" id="noTeam" name="noTeam">
+                            <label for="noTeam">Non sono affiliato a nessun team</label>
+                        </div>
+                        
+                        <div id="teamSection">
+                            <div class="form-group">
+                                <label class="form-label">Tipo di Tesseramento *</label>
+                                <div class="radio-group">
+                                    <div class="radio-item">
+                                        <input type="radio" id="teamTypeFidal" name="teamType" value="FIDAL" checked>
+                                        <label for="teamTypeFidal">FIDAL</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" id="teamTypeRuncard" name="teamType" value="Runcard">
+                                        <label for="teamTypeRuncard">Runcard</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="fidalSection">
+                                <div class="form-group">
+                                    <label for="teamName" class="form-label">Nome Team *</label>
+                                    <input type="text" id="teamName" name="teamName" class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="teamCode" class="form-label">Codice Team *</label>
+                                    <input type="text" id="teamCode" name="teamCode" class="form-input">
+                                </div>
+                            </div>
+                            
+                            <div id="runcardSection" style="display: none;">
+                                <div class="form-group">
+                                    <label for="runcardImage" class="form-label">Tessera Runcard *</label>
+                                    <input type="file" id="runcardImage" name="runcardImage" class="form-input" accept="image/*">
+                                    <small class="form-text text-muted">Carica una copia della tua tessera Runcard</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="medicalCertificate" class="form-label">Certificato Medico *</label>
+                                    <input type="file" id="medicalCertificate" name="medicalCertificate" class="form-input" accept="image/*,.pdf">
+                                    <small class="form-text text-muted">Carica una copia del tuo certificato medico</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Dati Gara -->
+                    <div class="form-step" id="step3">
+                        <h3>Dati Gara</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Seleziona Percorso *</label>
+                            <div class="route-options" id="routeOptions">
+                                <!-- Le opzioni di percorso verranno caricate dinamicamente -->
+                                <div class="loading">Caricamento percorsi...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" id="categorySection" style="display: none;">
+                            <label class="form-label">La tua Categoria</label>
+                            <div class="category-display" id="categoryDisplay"></div>
+                            <small class="form-text text-muted">Calcolata in base alla tua data di nascita e genere</small>
+                        </div>
+                        
+                        <div class="form-check mb-3">
+                            <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
+                            <label for="termsAccepted">Accetto i <a href="#" class="text-primary">termini e condizioni</a> *</label>
+                        </div>
+                        
+                        <div class="form-check mb-3">
+                            <input type="checkbox" id="privacyAccepted" name="privacyAccepted" required>
+                            <label for="privacyAccepted">Acconsento al trattamento dei miei dati personali *</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" id="prevStepBtn" class="btn btn-outline">Indietro</button>
+                        <button type="button" id="nextStepBtn" class="btn btn-primary">Avanti</button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="display: none;">Completa Iscrizione</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Sport Time</h3>
+                    <p>Soluzioni professionali di cronometraggio per eventi podistici di tutte le dimensioni.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Link Rapidi</h3>
+                    <ul>
+                        <li><a href="events.html">Eventi</a></li>
+                        <li><a href="services.html">Servizi</a></li>
+                        <li><a href="about.html">Chi Siamo</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contattaci</h3>
+                    <address>
+                        <p>Via Torino, 27</p>
+                        <p>Casorate Sempione</p>
+                        <p>Email: info@sporttime.com</p>
+                        <p>Telefono: +39 123 456 7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Sport Time. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/event-register.js"></script>
+</body>
+</html>

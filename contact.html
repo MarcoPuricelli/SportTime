@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Sport Time</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Sport Time</span>
+                </a>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Eventi</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="contact.html" class="active">Contatti</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-ghost">Accedi</a>
+                <a href="register.html" class="btn btn-primary">Registrati</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Eventi</a></li>
+            <li><a href="services.html">Servizi</a></li>
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="contact.html" class="active">Contatti</a></li>
+            <li class="mobile-auth">
+                <a href="login.html" class="btn btn-ghost">Accedi</a>
+                <a href="register.html" class="btn btn-primary">Registrati</a>
+            </li>
+        </ul>
+    </div>
+    
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contatti</h1>
+                <p>Siamo qui per rispondere alle tue domande e aiutarti a organizzare il tuo prossimo evento.</p>
+            </div>
+        </section>
+        
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form">
+                        <h2>Inviaci un Messaggio</h2>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">Nome *</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Cognome *</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Telefono</label>
+                                <input type="tel" id="phone" name="phone" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Oggetto *</label>
+                                <input type="text" id="subject" name="subject" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Messaggio *</label>
+                                <textarea id="message" name="message" class="form-input" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input type="checkbox" id="privacyAccepted" name="privacyAccepted" required>
+                                <label for="privacyAccepted">Acconsento al trattamento dei miei dati personali *</label>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Invia Messaggio</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h2>Informazioni di Contatto</h2>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Indirizzo</h3>
+                                <p>123 Via dello Sport<br>Centro Città, 12345<br>Italia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Telefono</h3>
+                                <p>+39 123 456 7890</p>
+                                <p>+39 098 765 4321</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <p>info@sporttime.com</p>
+                                <p>support@sporttime.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Orari di Apertura</h3>
+                                <p>Lunedì - Venerdì: 9:00 - 18:00</p>
+                                <p>Sabato: 9:00 - 13:00</p>
+                                <p>Domenica: Chiuso</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h3>Seguici sui Social</h3>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <h2>La Nostra Sede</h2>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.654246115283!2d12.4922309!3d41.8902102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b6532013ad%3A0x28f1c82e908503c4!2sColosseo!5e0!3m2!1sit!2sit!4v1650000000000!5m2!1sit!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Sport Time</h3>
+                    <p>Soluzioni professionali di cronometraggio per eventi podistici di tutte le dimensioni.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Link Rapidi</h3>
+                    <ul>
+                        <li><a href="events.html">Eventi</a></li>
+                        <li><a href="services.html">Servizi</a></li>
+                        <li><a href="about.html">Chi Siamo</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contattaci</h3>
+                    <address>
+                        <p>Via Torino, 27</p>
+                        <p>Casorate Sempione</p>
+                        <p>Email: info@sporttime.com</p>
+                        <p>Telefono: +39 123 456 7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Sport Time. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettaglio Evento - Sport Time</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Sport Time</span>
+                </a>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html" class="active">Eventi</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-ghost">Accedi</a>
+                <a href="register.html" class="btn btn-primary">Registrati</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html" class="active">Eventi</a></li>
+            <li><a href="services.html">Servizi</a></li>
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="contact.html">Contatti</a></li>
+            <li class="mobile-auth">
+                <a href="login.html" class="btn btn-ghost">Accedi</a>
+                <a href="register.html" class="btn btn-primary">Registrati</a>
+            </li>
+        </ul>
+    </div>
+    
+    <main>
+        <div class="container">
+            <div class="back-link mb-4">
+                <a href="events.html" class="text-primary">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Torna agli Eventi
+                </a>
+            </div>
+            
+            <div class="event-header" id="eventHeader">
+                <div class="loading">Caricamento dettagli evento...</div>
+            </div>
+            
+            <div class="event-content">
+                <div class="event-main">
+                    <div class="event-description-card" id="eventDescription">
+                        <div class="loading">Caricamento descrizione...</div>
+                    </div>
+                    
+                    <div class="tabs">
+                        <div class="tab-list">
+                            <div class="tab-item active" data-tab="participants-tab">Partecipanti</div>
+                            <div class="tab-item" data-tab="results-tab">Risultati</div>
+                        </div>
+                        
+                        <div class="tab-content active" id="participants-tab">
+                            <div class="filters">
+                                <div class="search-container">
+                                    <i class="fas fa-search search-icon"></i>
+                                    <input type="text" id="participants-search" class="search-input" placeholder="Cerca per nome, pettorale o team...">
+                                </div>
+                                
+                                <div class="filters-grid">
+                                    <div class="filter-group">
+                                        <label for="gender-filter" class="filter-label">Sesso</label>
+                                        <select id="gender-filter" class="filter-select">
+                                            <option value="all">Tutti</option>
+                                            <option value="M">Maschile</option>
+                                            <option value="F">Femminile</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="filter-group">
+                                        <label for="category-filter" class="filter-label">Categoria</label>
+                                        <select id="category-filter" class="filter-select">
+                                            <option value="all">Tutte</option>
+                                            <!-- Le categorie verranno caricate dinamicamente -->
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="filter-group">
+                                        <label for="nationality-filter" class="filter-label">Nazionalità</label>
+                                        <select id="nationality-filter" class="filter-select">
+                                            <option value="all">Tutte</option>
+                                            <!-- Le nazionalità verranno caricate dinamicamente -->
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="filter-group">
+                                        <label for="race-filter" class="filter-label">Gara</label>
+                                        <select id="race-filter" class="filter-select">
+                                            <option value="all">Tutte</option>
+                                            <!-- Le gare verranno caricate dinamicamente -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="results-count mb-4">
+                                <span id="participants-count">0</span> partecipanti trovati
+                            </div>
+                            
+                            <div id="participants-container">
+                                <div class="loading">Caricamento partecipanti...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="results-tab">
+                            <div class="filters">
+                                <div class="search-container">
+                                    <i class="fas fa-search search-icon"></i>
+                                    <input type="text" id="results-search" class="search-input" placeholder="Cerca per nome, pettorale o team...">
+                                </div>
+                                
+                                <div class="filters-grid">
+                                    <div class="filter-group">
+                                        <label for="results-gender-filter" class="filter-label">Sesso</label>
+                                        <select id="results-gender-filter" class="filter-select">
+                                            <option value="all-genders">Tutti</option>
+                                            <option value="M">Maschile</option>
+                                            <option value="F">Femminile</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="filter-group">
+                                        <label for="results-category-filter" class="filter-label">Categoria</label>
+                                        <select id="results-category-filter" class="filter-select">
+                                            <option value="all-categories">Tutte</option>
+                                            <!-- Le categorie verranno caricate dinamicamente -->
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="filter-group">
+                                        <label for="results-nationality-filter" class="filter-label">Nazionalità</label>
+                                        <select id="results-nationality-filter" class="filter-select">
+                                            <option value="all-nationalities">Tutte</option>
+                                            <!-- Le nazionalità verranno caricate dinamicamente -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="results-count mb-4">
+                                <span id="results-count">0</span> risultati trovati
+                            </div>
+                            
+                            <div id="results-container">
+                                <div class="loading">Caricamento risultati...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-sidebar">
+                    <div class="event-sidebar-card" id="eventSidebar">
+                        <div class="loading">Caricamento informazioni...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Sport Time</h3>
+                    <p>Soluzioni professionali di cronometraggio per eventi podistici di tutte le dimensioni.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Link Rapidi</h3>
+                    <ul>
+                        <li><a href="events.html">Eventi</a></li>
+                        <li><a href="services.html">Servizi</a></li>
+                        <li><a href="about.html">Chi Siamo</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contattaci</h3>
+                    <address>
+                        <p>Via Torino, 27</p>
+                        <p>Casorate Sempione</p>
+                        <p>Email: info@sporttime.com</p>
+                        <p>Telefono: +39 123 456 7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Sport Time. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/event-detail.js"></script>
+</body>
+</html>

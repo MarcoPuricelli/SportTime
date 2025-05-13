@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Time - Servizi di Timekeeping Professionali</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Sport Time</span>
+                </a>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="events.html">Eventi</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-ghost">Accedi</a>
+                <a href="register.html" class="btn btn-primary">Registrati</a>
+
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Eventi</a></li>
+            <li><a href="services.html">Servizi</a></li>
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="contact.html">Contatti</a></li>
+            <li class="mobile-auth">
+                <a href="login.html" class="btn btn-ghost">Accedi</a>
+                <a href="register.html" class="btn btn-primary">Registrati</a>
+            </li>
+        </ul>
+    </div>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Soluzioni Professionali di Timekeeping per Gare Podistiche</h1>
+                    <p>Sistemi di cronometraggio precisi per eventi di corsa di tutte le dimensioni. Dalla distribuzione dei chip ai risultati in tempo reale.</p>
+                    <div class="hero-buttons">
+                        <a href="events.html" class="btn btn-light">Prossimi Eventi</a>
+                        <a href="services.html" class="btn btn-outline-light">I Nostri Servizi</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-image.jpg" alt="Corridori che attraversano il traguardo">
+                </div>
+            </div>
+        </section>
+        
+        <section class="services">
+            <div class="container">
+                <h2>I Nostri Servizi di Timekeeping</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Cronometraggio di Precisione</h3>
+                        <p>Tecnologia di cronometraggio a chip all'avanguardia per risultati di gara accurati fino al millisecondo.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Gestione Eventi</h3>
+                        <p>Soluzioni complete di gestione delle gare, inclusa la registrazione, l'assegnazione dei pettorali e l'elaborazione dei risultati.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Risultati e Certificati</h3>
+                        <p>Pubblicazione istantanea dei risultati e certificati personalizzati per tutti i partecipanti.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="upcoming-events">
+            <div class="container">
+                <h2>Prossimi Eventi</h2>
+                <div class="events-grid" id="upcomingEventsGrid">
+                    <!-- Gli eventi verranno caricati dinamicamente tramite JavaScript -->
+                    <div class="loading">Caricamento eventi...</div>
+                </div>
+                <div class="text-center">
+                    <a href="events.html" class="btn btn-outline">Visualizza Tutti gli Eventi</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Sport Time</h3>
+                    <p>Soluzioni professionali di cronometraggio per eventi podistici di tutte le dimensioni.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Link Rapidi</h3>
+                    <ul>
+                        <li><a href="events.html">Eventi</a></li>
+                        <li><a href="services.html">Servizi</a></li>
+                        <li><a href="about.html">Chi Siamo</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contattaci</h3>
+                    <address>
+                        <p>Via Torino, 27</p>
+                        <p>Casorate Sempione</p>
+                        <p>Email: info@sporttime.com</p>
+                        <p>Telefono: +39 123 456 7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Sport Time. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
